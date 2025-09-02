@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    title= title || 'Movie'
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    header
+      h1= title ? `Details of "${title}"` : 'Movie not found'
+
+    main
+      if error
+        p(style="color: red; font-weight: bold")= error
+      else
+        .movie-details
+          img(src=poster, alt=`Poster de ${title}`, style="max-width: 200px; float: left; margin-right: 20px")
+          .info
+            h2= title
+            p
+              strong Director: 
+              | #{director}
+            p
+              strong Year: 
+              | #{year}
+            p
+              strong Sinopsis: 
+              | #{plot}
+          .clear(style="clear: both")
+
+    footer.footer
+      p © #{new Date().getFullYear()} PugLife.
+

@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title PugLife
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    header
+      h1 Movies
+
+    main
+      form(method="POST", action="/film")
+        input(type="text", name="title", placeholder="Search by title", required)
+        button(type="submit") Search
+
+    footer.footer
+      p © #{new Date().getFullYear()} PugLife.
+
+
